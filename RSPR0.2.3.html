@@ -1,0 +1,369 @@
+<!--
+Script by: StarkNebula
+It's shit and looks like shit, but it works.
+
+This is a basic RSPR JS Script to generate parts easily for Randomly Selected (Custom)
+Parts Races.
+
+To add:
+* Checkboxes to turn AX/JP parts on/off
+* Make use of "real" RNG
+* Ratios from checkboxes/form field
+* Turn off parts (Megalo)
+-->
+
+
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+	<meta charset='UTF8' />
+	<title>
+		RSPR JS Alpha 0.2.3
+	</title/>
+</head>
+
+<body>
+	<h1>RSPR JS Alpha 0.2.3</h1>
+
+		<h4>All Standard Parts RSPR</h4>
+			<button onclick="GenerateParts111()">1:1:1</button>
+			<button onclick="GenerateParts211()">2:1:1</button>
+			<button onclick="GenerateParts212()">2:1:2</button>
+			<button onclick="GenerateParts222()">2:2:2</button>
+			<button onclick="GenerateParts322()">3:2:2</button>
+			
+		<h4>All Parts RSPR</h4>
+			<button onclick="GeneratePartsAll111()">1:1:1</button>
+			<button onclick="GeneratePartsAll211()">2:1:1</button>
+			<button onclick="GeneratePartsAll212()">2:1:2</button>
+			<button onclick="GeneratePartsAll222()">2:2:2</button>
+			<button onclick="GeneratePartsAll322()">3:2:2</button>
+
+<script language="javascript" type="text/javascript"><!--------------------------------->
+
+var bodyParts = [
+	'Aqua Goose',
+	'Big Tyrant',
+	'Brave Eagle',
+	'Dread Hammer',
+	'Fire Wolf',
+	'Funny Swallow',
+	'Giant Planet',
+	'Grand Base',
+	'Holy Spider',
+	'Liberty Manta',
+	'Megalo Cruiser',
+	'Optical Wing',
+	'Rapid Barrel',
+	'Silver Sword',
+	'Sky Horse',
+	'Space Cancer',
+	'Speedy Dragon',
+	'Splash Whale',
+	'Valiant Jaguar',
+	'Wild Chariot',
+	];
+	
+var cockpitParts = [
+	'Aerial Bullet',
+	'Blast Camel',
+	'Bright Spear',
+	'Combat Cannon',
+	'Crystal Egg',
+	'Cyber Fox',
+	'Dark Chaser',
+	'Energy Crest',
+	'Garnet Phantom',
+	'Heat Snake',
+	'Moon Snail',
+	'Muscle Gorilla',
+	'Rave Drifter',
+	'Red Rex',
+	'Scud Viper',
+	'Sonic Soldier',
+	'Spark Bird',
+	'Super Lynx',
+	'Windy Shark',
+	'Wonder Worm',
+	];
+	
+var boosterParts = [
+	'Bazooka -YS',
+	'Bluster -X',
+	'Boxer -2C',
+	'Comet -V',
+	'Devilfish -RX',
+	'Euros -01',
+	'Extreme -ZZ',
+	'Impulse 220',
+	'Jupiter -Q',
+	'Meteor -RR',
+	'Punisher -4X',
+	'Raiden -88',
+	'Saturn -SG',
+	'Scorpion -R',
+	'Sunrise 140',
+	'Thunderbolt -V2',
+	'Tiger -RZ',
+	'Titan -G4',
+	'Triangle -GT',
+	'Triple -Z',
+	];
+	
+<!-------------------------------------------------------------------------------------->
+
+var bodyPartsAll = [
+	'Aqua Goose',
+	'Big Tyrant',
+	'Brave Eagle',
+	'Dread Hammer',
+	'Fire Wolf',
+	'Funny Swallow',
+	'Giant Planet',
+	'Grand Base',
+	'Holy Spider',
+	'Liberty Manta',
+	'Megalo Cruiser',
+	'Optical Wing',
+	'Rapid Barrel',
+	'Silver Sword',
+	'Sky Horse',
+	'Space Cancer',
+	'Speedy Dragon',
+	'Splash Whale',
+	'Valiant Jaguar',
+	'Wild Chariot',
+	// AX parts
+	'Mad Bull',
+	//JP parts
+	'Blood Raven',
+	'Galaxy Falcon',
+	'Metal Shell',
+	'Rage Knight'
+	];
+	
+var cockpitPartsAll = [
+	'Aerial Bullet',
+	'Blast Camel',
+	'Bright Spear',
+	'Combat Cannon',
+	'Crystal Egg',
+	'Cyber Fox',
+	'Dark Chaser',
+	'Energy Crest',
+	'Garnet Phantom',
+	'Heat Snake',
+	'Moon Snail',
+	'Muscle Gorilla',
+	'Rave Drifter',
+	'Red Rex',
+	'Scud Viper',
+	'Sonic Soldier',
+	'Spark Bird',
+	'Super Lynx',
+	'Windy Shark',
+	'Wonder Worm',
+	// AX parts
+	'Crazy Buffalo',
+	// JP parts
+	'Hyper Stream',
+	'Maximum Star',
+	'Round Disk',
+	'Rush Cyclone'
+	];
+	
+var boosterPartsAll = [
+	'Bazooka -YS',
+	'Bluster -X',
+	'Boxer -2C',
+	'Comet -V',
+	'Devilfish -RX',
+	'Euros -01',
+	'Extreme -ZZ',
+	'Impulse 220',
+	'Jupiter -Q',
+	'Meteor -RR',
+	'Punisher -4X',
+	'Raiden -88',
+	'Saturn -SG',
+	'Scorpion -R',
+	'Sunrise 140',
+	'Thunderbolt -V2',
+	'Tiger -RZ',
+	'Titan -G4',
+	'Triangle -GT',
+	'Triple -Z',
+	// AX parts
+	'Mars -EX',
+	// JP parts
+	'Crown -77',
+	'Hornet -FX',
+	'Shuttle -M2',
+	'Velocity -J'
+	];
+	
+<!-------------------------------------------------------------------------------------->
+	
+var bodyPart1    = Math.floor(Math.random() * bodyParts.length);
+var bodyPart2    = Math.floor(Math.random() * bodyParts.length);
+var bodyPart3    = Math.floor(Math.random() * bodyParts.length);
+
+
+var cockpitPart1 = Math.floor(Math.random() * cockpitParts.length);
+var cockpitPart2 = Math.floor(Math.random() * cockpitParts.length);
+var cockpitPart3 = Math.floor(Math.random() * cockpitParts.length);
+
+
+var boosterPart1 = Math.floor(Math.random() * boosterParts.length);
+var boosterPart2 = Math.floor(Math.random() * boosterParts.length);
+var boosterPart3 = Math.floor(Math.random() * boosterParts.length);
+
+<!-------------------------------------------------------------------------------------->
+
+function GenerateParts111(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1]
+)}
+
+function GenerateParts211(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1]
+)}
+
+function GenerateParts212(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1] 
+	+ "<br>" +
+	boosterParts[boosterPart2]
+)}
+
+function GenerateParts222(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br>" +
+	cockpitParts[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1] 
+	+ "<br>" +
+	boosterParts[boosterPart2]
+)}
+
+function GenerateParts322(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br>" +
+	bodyParts[bodyPart3]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br>" +
+	cockpitParts[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1] 
+	+ "<br>" +
+	boosterParts[boosterPart2]
+)}
+
+<!-------------------------------------------------------------------------------------->
+
+function GeneratePartsAll111(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1]
+)}
+
+function GeneratePartsAll211(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1]
+)}
+
+function GeneratePartsAll212(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1] 
+	+ "<br>" +
+	boosterPartsAll[boosterPart2]
+)}
+
+function GeneratePartsAll222(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br>" +
+	cockpitPartsAll[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1] 
+	+ "<br>" +
+	boosterPartsAll[boosterPart2]
+)}
+
+function GeneratePartsAll322(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br>" +
+	bodyPartsAll[bodyPart3]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br>" +
+	cockpitPartsAll[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1] 
+	+ "<br>" +
+	boosterPartsAll[boosterPart2]
+)}
+
+</script><!----------------------------------------------------------------------------->
+
+</body>
+</html>
