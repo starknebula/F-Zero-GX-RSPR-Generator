@@ -8,7 +8,7 @@ Parts Races.
 To add:
 * Checkboxes to turn AX/JP parts on/off
 * Make use of "real" RNG
-* Ratios from checkboxes/form field
+* Ratios from radio/form field
 * Turn off parts (Megalo)
 * Add handler so that the same parts are not generated
 -->
@@ -41,7 +41,7 @@ To add:
 			<button onclick="GeneratePartsAll222()">2:2:2</button>
 			<button onclick="GeneratePartsAll322()">3:2:2</button>
 
-<script language="javascript" type="text/javascript"><!--------------------------------->
+<script>//<!---------------------------------------------------------------------------->
 
 var bodyParts = [
 	'Aqua Goose',
@@ -112,7 +112,7 @@ var boosterParts = [
 	'Triple -Z',
 	];
 	
-<!-------------------------------------------------------------------------------------->
+//<------------------------------------------------------------------------------------->
 
 var bodyPartsAll = [
 	'Aqua Goose',
@@ -204,7 +204,7 @@ var boosterPartsAll = [
 	'Velocity -J'
 	];
 	
-<!-------------------------------------------------------------------------------------->
+//<------------------------------------------------------------------------------------->
 	
 var bodyPart1    = Math.floor(Math.random() * bodyParts.length);
 var bodyPart2    = Math.floor(Math.random() * bodyParts.length);
@@ -220,7 +220,7 @@ var boosterPart1 = Math.floor(Math.random() * boosterParts.length);
 var boosterPart2 = Math.floor(Math.random() * boosterParts.length);
 var boosterPart3 = Math.floor(Math.random() * boosterParts.length);
 
-<!-------------------------------------------------------------------------------------->
+//<------------------------------------------------------------------------------------->
 
 function GenerateParts111(){
 document.write(
@@ -292,7 +292,7 @@ document.write(
 	boosterParts[boosterPart2]
 )}
 
-<!-------------------------------------------------------------------------------------->
+//<------------------------------------------------------------------------------------->
 
 function GeneratePartsAll111(){
 document.write(
