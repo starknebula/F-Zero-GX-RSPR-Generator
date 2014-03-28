@@ -1,5 +1,8 @@
-This script is free! You may use it, alter it, implement it into something you may sell; whatever you want!
-Improvements are welcome. I don't program in JavaScript, so this script is likely REALLY bad!
+// This script is free! You may use it, alter it, implement it into something you may sell; whatever you want!
+// Improvements are welcome. I don't program in JavaScript, so this script is likely REALLY bad!
+
+What is an RSPR?
+* An RSPR is a Randomly Selected (Custom) Parts Race - a challenge similar to "Sealed Pack Play," a card game tournament where you're given a set number of new booster packs from which to build a deck and compete with. For F-Zero GX, we randomly select parts and compete with the machines they can create.
 
 1) Download the RSPR Generator HTML file.
 2) Open it with any web-browser you wish.
