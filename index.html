@@ -1,1 +1,756 @@
-Hello World
+Skip to content
+ 
+This repository
+Explore
+Gist
+Blog
+Help
+Raphael Tetreault starknebula
+ 
+2  Unwatch
+Star 0 Fork 0PUBLIC starknebula / F-Zero-GX-RSPR-Generator
+ branch: master  F-Zero-GX-RSPR-Generator / RSPR0.2.3.html 
+starknebula starknebula 3 hours ago Update RSPR0.2.3.html
+1 contributor
+ file  371 lines (334 sloc)  7.758 kb  Open EditRawBlameHistory Delete
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+<!--
+Script by: StarkNebula
+It's shit and looks like shit, but it works.
+
+This is a basic RSPR JS Script to generate parts easily for Randomly Selected (Custom)
+Parts Races.
+
+To add:
+* Checkboxes to turn AX/JP parts on/off
+* Make use of "real" RNG
+* Ratios from radio/form field
+* Turn off parts (Megalo)
+* Add handler so that the same parts are not generated
+-->
+
+
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+	<meta charset='UTF8' />
+	<title>
+		RSPR JS Alpha 0.2.3
+	</title>
+</head>
+
+<body>
+	<h1>RSPR JS Alpha 0.2.3</h1>
+
+		<h4>All Standard Parts RSPR</h4>
+			<button onclick="GenerateParts111()">1:1:1</button>
+			<button onclick="GenerateParts211()">2:1:1</button>
+			<button onclick="GenerateParts212()">2:1:2</button>
+			<button onclick="GenerateParts222()">2:2:2</button>
+			<button onclick="GenerateParts322()">3:2:2</button>
+
+		<h4>All Parts RSPR</h4>
+			<button onclick="GeneratePartsAll111()">1:1:1</button>
+			<button onclick="GeneratePartsAll211()">2:1:1</button>
+			<button onclick="GeneratePartsAll212()">2:1:2</button>
+			<button onclick="GeneratePartsAll222()">2:2:2</button>
+			<button onclick="GeneratePartsAll322()">3:2:2</button>
+
+<script>//<!---------------------------------------------------------------------------->
+
+var bodyParts = [
+	'Aqua Goose',
+	'Big Tyrant',
+	'Brave Eagle',
+	'Dread Hammer',
+	'Fire Wolf',
+	'Funny Swallow',
+	'Giant Planet',
+	'Grand Base',
+	'Holy Spider',
+	'Liberty Manta',
+	'Megalo Cruiser',
+	'Optical Wing',
+	'Rapid Barrel',
+	'Silver Sword',
+	'Sky Horse',
+	'Space Cancer',
+	'Speedy Dragon',
+	'Splash Whale',
+	'Valiant Jaguar',
+	'Wild Chariot',
+	];
+
+var cockpitParts = [
+	'Aerial Bullet',
+	'Blast Camel',
+	'Bright Spear',
+	'Combat Cannon',
+	'Crystal Egg',
+	'Cyber Fox',
+	'Dark Chaser',
+	'Energy Crest',
+	'Garnet Phantom',
+	'Heat Snake',
+	'Moon Snail',
+	'Muscle Gorilla',
+	'Rave Drifter',
+	'Red Rex',
+	'Scud Viper',
+	'Sonic Soldier',
+	'Spark Bird',
+	'Super Lynx',
+	'Windy Shark',
+	'Wonder Worm',
+	];
+
+var boosterParts = [
+	'Bazooka -YS',
+	'Bluster -X',
+	'Boxer -2C',
+	'Comet -V',
+	'Devilfish -RX',
+	'Euros -01',
+	'Extreme -ZZ',
+	'Impulse 220',
+	'Jupiter -Q',
+	'Meteor -RR',
+	'Punisher -4X',
+	'Raiden -88',
+	'Saturn -SG',
+	'Scorpion -R',
+	'Sunrise 140',
+	'Thunderbolt -V2',
+	'Tiger -RZ',
+	'Titan -G4',
+	'Triangle -GT',
+	'Triple -Z',
+	];
+
+//<------------------------------------------------------------------------------------->
+
+var bodyPartsAll = [
+	'Aqua Goose',
+	'Big Tyrant',
+	'Brave Eagle',
+	'Dread Hammer',
+	'Fire Wolf',
+	'Funny Swallow',
+	'Giant Planet',
+	'Grand Base',
+	'Holy Spider',
+	'Liberty Manta',
+	'Megalo Cruiser',
+	'Optical Wing',
+	'Rapid Barrel',
+	'Silver Sword',
+	'Sky Horse',
+	'Space Cancer',
+	'Speedy Dragon',
+	'Splash Whale',
+	'Valiant Jaguar',
+	'Wild Chariot',
+	// AX parts
+	'Mad Bull',
+	//JP parts
+	'Blood Raven',
+	'Galaxy Falcon',
+	'Metal Shell',
+	'Rage Knight'
+	];
+
+var cockpitPartsAll = [
+	'Aerial Bullet',
+	'Blast Camel',
+	'Bright Spear',
+	'Combat Cannon',
+	'Crystal Egg',
+	'Cyber Fox',
+	'Dark Chaser',
+	'Energy Crest',
+	'Garnet Phantom',
+	'Heat Snake',
+	'Moon Snail',
+	'Muscle Gorilla',
+	'Rave Drifter',
+	'Red Rex',
+	'Scud Viper',
+	'Sonic Soldier',
+	'Spark Bird',
+	'Super Lynx',
+	'Windy Shark',
+	'Wonder Worm',
+	// AX parts
+	'Crazy Buffalo',
+	// JP parts
+	'Hyper Stream',
+	'Maximum Star',
+	'Round Disk',
+	'Rush Cyclone'
+	];
+
+var boosterPartsAll = [
+	'Bazooka -YS',
+	'Bluster -X',
+	'Boxer -2C',
+	'Comet -V',
+	'Devilfish -RX',
+	'Euros -01',
+	'Extreme -ZZ',
+	'Impulse 220',
+	'Jupiter -Q',
+	'Meteor -RR',
+	'Punisher -4X',
+	'Raiden -88',
+	'Saturn -SG',
+	'Scorpion -R',
+	'Sunrise 140',
+	'Thunderbolt -V2',
+	'Tiger -RZ',
+	'Titan -G4',
+	'Triangle -GT',
+	'Triple -Z',
+	// AX parts
+	'Mars -EX',
+	// JP parts
+	'Crown -77',
+	'Hornet -FX',
+	'Shuttle -M2',
+	'Velocity -J'
+	];
+
+//<------------------------------------------------------------------------------------->
+
+var bodyPart1    = Math.floor(Math.random() * bodyParts.length);
+var bodyPart2    = Math.floor(Math.random() * bodyParts.length);
+var bodyPart3    = Math.floor(Math.random() * bodyParts.length);
+
+
+var cockpitPart1 = Math.floor(Math.random() * cockpitParts.length);
+var cockpitPart2 = Math.floor(Math.random() * cockpitParts.length);
+var cockpitPart3 = Math.floor(Math.random() * cockpitParts.length);
+
+
+var boosterPart1 = Math.floor(Math.random() * boosterParts.length);
+var boosterPart2 = Math.floor(Math.random() * boosterParts.length);
+var boosterPart3 = Math.floor(Math.random() * boosterParts.length);
+
+//<------------------------------------------------------------------------------------->
+
+function GenerateParts111(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1]
+)}
+
+function GenerateParts211(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1]
+)}
+
+function GenerateParts212(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1] 
+	+ "<br>" +
+	boosterParts[boosterPart2]
+)}
+
+function GenerateParts222(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br>" +
+	cockpitParts[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1] 
+	+ "<br>" +
+	boosterParts[boosterPart2]
+)}
+
+function GenerateParts322(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyParts[bodyPart1]
+	+ "<br>" +
+	bodyParts[bodyPart2]
+	+ "<br>" +
+	bodyParts[bodyPart3]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitParts[cockpitPart1]
+	+ "<br>" +
+	cockpitParts[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterParts[boosterPart1] 
+	+ "<br>" +
+	boosterParts[boosterPart2]
+)}
+
+//<------------------------------------------------------------------------------------->
+
+function GeneratePartsAll111(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1]
+)}
+
+function GeneratePartsAll211(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1]
+)}
+
+function GeneratePartsAll212(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1] 
+	+ "<br>" +
+	boosterPartsAll[boosterPart2]
+)}
+
+function GeneratePartsAll222(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br>" +
+	cockpitPartsAll[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1] 
+	+ "<br>" +
+	boosterPartsAll[boosterPart2]
+)}
+
+function GeneratePartsAll322(){
+document.write(
+	"<b>Body:</b><br>" +
+	bodyPartsAll[bodyPart1]
+	+ "<br>" +
+	bodyPartsAll[bodyPart2]
+	+ "<br>" +
+	bodyPartsAll[bodyPart3]
+	+ "<br><br><b>Cockpit:</b><br>" +
+	cockpitPartsAll[cockpitPart1]
+	+ "<br>" +
+	cockpitPartsAll[cockpitPart2]
+	+ "<br><br><b>Booster:</b><br>" +
+	boosterPartsAll[boosterPart1] 
+	+ "<br>" +
+	boosterPartsAll[boosterPart2]
+)}
+
+</script><!----------------------------------------------------------------------------->
+
+</body>
+</html>
+Status API Training Shop Blog About © 2014 GitHub, Inc. Terms Privacy Security Contact 
