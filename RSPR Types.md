@@ -2,7 +2,7 @@ Randomly Selected Parts Race
 ========
 A Randomly Selected (Custom) Parts Race (RSPR) is a type of sub-game for F-Zero GX. The idea comes from "Sealed Pack Play" chalenge, a card game tournament where you're given a set number of new booster packs from which to build a deck and compete with. Likewise for F-Zero GX, we randomly select parts and compete with the machines they can create.
 
-## Rules of Play
+# Rules of Play
 
 There are multiple settings for each race, as well as contestant factors which may dictate how the races are played out. In general, simply find the rules you wish to use with your friends.
 
@@ -30,7 +30,7 @@ The standard cup hierarchy is _**Ruby > Sapphire > Emerald > Diamond > AX**_. Ho
 **Quad-Cups**: A run of 4 cups, often Ruby through Diamond.  
 **All-Cups**: A run of every cup, usually in hierarchy.  
 
-## Game Types
+# Game Types
 
 ### Unique Machine(s)
 Each individual player has their own Uniquely generated set of custom parts. Each competitor will therefore have varying machines to choose from.
@@ -38,7 +38,7 @@ Each individual player has their own Uniquely generated set of custom parts. Eac
 ### Same Machine(s)
 Each player uses the same set of custom parts. Each competitor will therefore have the same machine, or machines dirived from the same set of generated parts.
 
-## Tournament
+# Tournament
 ### Single-Elimination Tournament
 Single-Elimination Tournaments will require minimum 4 participants, with no maximum. Once a participant loses, they are out of the tournament.
 
@@ -47,16 +47,15 @@ Double-Elimination Tournaments will require minimum 4 participants, with no maxi
 
 ------
 
-### Rounds
-#### Cup Matches
+### Cup Matches
 Each round consists of a single cup, wherein the player whom completes it the fastest is the winner.
 
-#### Track Matches
+### Track Matches
 Each round consists of one or multiple tracks, wherein the player whom completes them the fastest is the winner. Multiple track rounds are a best-of set. The winner is determined by the Results Screen time.
 
 ------
 
-#### Forfeit Matches
+### Forfeit Matches
 The winner of a bracket picks any of the losing opponent's parts to add to his set of custom parts for possible use in later matches. This play style suits Double-Elimination Tournaments*.
 
 ⋆ A base set is 1:1:1, any additional parts are the spare parts.
@@ -67,5 +66,5 @@ The winner of a bracket picks any of the losing opponent's parts to add to his s
 
     Ratio for tournament should be: SpareParts = nRounds -1.
 
-#### Swap Matches
+### Swap Matches
 The winner of a bracket *must* pick any of the losing opponent's parts to add to his set of custom parts, regardless if they are undiserable. This works best with 1:1:1 sets.
