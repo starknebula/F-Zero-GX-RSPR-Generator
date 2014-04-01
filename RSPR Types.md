@@ -36,7 +36,7 @@ The standard cup hierarchy is _**Ruby > Sapphire > Emerald > Diamond > AX**_. Ho
 Each individual player has their own Uniquely generated set of custom parts. Each competitor will therefore have varying machines to choose from.
 
 ### Same Machine(s)
-Each player uses the same set of custom parts. Each competitor will therefore have the same machine, or machines dirived from the same set of generated parts.
+Each player uses the same set of custom parts. Each competitor will therefore have the same machine, or machines derived from the same set of generated parts.
 
 # Tournament
 ### Single-Elimination Tournament
@@ -47,16 +47,16 @@ Double-Elimination Tournaments will require minimum 4 participants, with no maxi
 
 ------
 
-### Cup Matches
-Each round consists of a single cup, wherein the player whom completes it the fastest is the winner.
+### Cups
+Each round consists of a single cup, wherein the player whom completes it the fastest is the winner. The winner is determined by the fastest Single Segment Time.
 
-### Track Matches
+### Tracks
 Each round consists of one or multiple tracks, wherein the player whom completes them the fastest is the winner. Multiple track rounds are a best-of set. The winner is determined by the Results Screen time.
 
 ------
 
 ### Forfeit Matches
-The winner of a bracket picks any of the losing opponent's parts to add to his set of custom parts for possible use in later matches. This play style suits Double-Elimination Tournaments⋆.
+The winner of a bracket inherits 1 of the losing opponent's parts to add to his set of custom parts for possible use in later matches. This play style suits Double-Elimination Tournaments⋆.
 
 ⋆ A base set is 1:1:1, any additional parts are the spare parts.
 
@@ -65,6 +65,9 @@ The winner of a bracket picks any of the losing opponent's parts to add to his s
 ⋆ The number of spare parts should match that of the amount of rounds minus 1. This is due to that, once a player loses a part, their ratio decreases, and it cannot decrease to lower than 1:1:1. As such, there must be enough forfeitable parts for one to be lost each match without resulting in the lack of parts to participate.
 
     Ratio for tournament should be: SpareParts = nRounds -1.
+
+### Copy Matches
+The winner of a bracket copies 1 of the losing opponent's parts to add to his set of custom parts for possible use in later matches.
 
 ### Swap Matches
 The winner of a bracket _**must**_ pick any of the losing opponent's parts to add to his set of custom parts, regardless if they are undiserable. This works best with 1:1:1 sets.
