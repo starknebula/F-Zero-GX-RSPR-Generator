@@ -1,6 +1,6 @@
 Randomly Selected Parts Race
 ========
-A Randomly Selected (Custom) Parts Race (RSPR) is a type of sub-game for F-Zero GX. The idea comes from "Sealed Pack Play" chalenge, a card game tournament where you're given a set number of new booster packs from which to build a deck and compete with. Likewise for F-Zero GX, we randomly select parts and compete with the machines they can create.
+A Randomly Selected (Custom) Parts Race (RSPR) is a type of sub-game for F-Zero GX. The idea comes from the "Sealed Pack Play" chalenge, a card game tournament where you're given a set number of new booster packs from which to build a deck and compete with. Likewise for F-Zero GX, we randomly select parts and compete with the machines they can create.
 
 # Rules of Play
 
