@@ -7,7 +7,7 @@ A Randomly Selected (Custom) Parts Race (RSPR) is a type of sub-game for F-Zero 
 There are multiple settings for each race, as well as contestant factors which may dictate how the races are played out. In general, simply find the rules you wish to use with your friends.
 
 ### Ratios
-Ratios are the number of parts compared to other parts generated for each match. The ratio is always _**Body:Cockpit:Booster**_. A 1:1:1 ratio means 1 Body part, 1 Cockpit part, and 1 Booster part.
+Ratios are the number of parts compared to other parts generated for each match. The ratio is always _**Body:Cockpit:Booster**_. A 3:2:1 ratio means 3 Body parts, 2 Cockpit parts, and 1 Booster part.
 
 Body is the most influential part while the Cockpit is the least influencial. Because of this, it is advised to increment the ratios in order of Body, Booster, and lastly Cockpit.
 
@@ -24,7 +24,7 @@ Regular Parts requires that the contestants have all 75 Body, Cockpit, and Boost
 ### Cup Sets
 The standard cup hierarchy is _**Ruby > Sapphire > Emerald > Diamond > AX**_. However, any order is permitted. 
 
-**Single Cup**: A run of a 1 cup.  
+**Single Cup**: A run of 1 cup.  
 **Dual Cup**: A run of 2 cups, usually in hierarchy.  
 **Tri-Cup**: A run of 3 cups, usually in hierarchy.  
 **Quad-Cups**: A run of 4 cups, often Ruby through Diamond.  
