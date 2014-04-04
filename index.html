@@ -1,6 +1,7 @@
 <!--
 Script by: StarkNebula
-It's shit and looks like shit, but it works.
+It's still kinda shit and still looks like shit, but it works enough.
+Special thanks to to Locks for making it a lot less shit.
 
 This is a basic RSPR JS Script to generate parts easily for Randomly Selected (Custom)
 Parts Races.
@@ -8,9 +9,8 @@ Parts Races.
 To add:
 * Checkboxes to turn AX/JP parts on/off
 * Make use of "real" RNG
-* Ratios from radio/form field
+* Ratios from checkboxes/form field
 * Turn off parts (Megalo)
-* Add handler so that the same parts are not generated
 -->
 
 
@@ -20,12 +20,12 @@ To add:
 <head>
 	<meta charset='UTF8' />
 	<title>
-		RSPR JS Alpha 0.2.3
+		RSPR JS Alpha 0.3.1
 	</title>
 </head>
 
 <body>
-	<h1>RSPR JS Alpha 0.2.3</h1>
+	<h1>RSPR JS Alpha 0.3.1</h1>
 
 		<h4>All Standard Parts RSPR</h4>
 			<button onclick="GenerateParts111()">1:1:1</button>
@@ -33,183 +33,183 @@ To add:
 			<button onclick="GenerateParts212()">2:1:2</button>
 			<button onclick="GenerateParts222()">2:2:2</button>
 			<button onclick="GenerateParts322()">3:2:2</button>
-
+			
 		<h4>All Parts RSPR</h4>
 			<button onclick="GeneratePartsAll111()">1:1:1</button>
 			<button onclick="GeneratePartsAll211()">2:1:1</button>
 			<button onclick="GeneratePartsAll212()">2:1:2</button>
 			<button onclick="GeneratePartsAll222()">2:2:2</button>
 			<button onclick="GeneratePartsAll322()">3:2:2</button>
+			
+	<h3>Generated ship</h3>
+	<div id="generated-ship"></div>
 
-<script>//<!---------------------------------------------------------------------------->
+<script>//<------------------------------------------------------------------------------>
 
 var bodyParts = [
-	'Aqua Goose',
-	'Big Tyrant',
-	'Brave Eagle',
-	'Dread Hammer',
-	'Fire Wolf',
-	'Funny Swallow',
-	'Giant Planet',
-	'Grand Base',
-	'Holy Spider',
-	'Liberty Manta',
-	'Megalo Cruiser',
-	'Optical Wing',
-	'Rapid Barrel',
-	'Silver Sword',
-	'Sky Horse',
-	'Space Cancer',
-	'Speedy Dragon',
-	'Splash Whale',
-	'Valiant Jaguar',
-	'Wild Chariot',
-	];
+  'Aqua Goose',
+  'Big Tyrant',
+  'Brave Eagle',
+  'Dread Hammer',
+  'Fire Wolf',
+  'Funny Swallow',
+  'Giant Planet',
+  'Grand Base',
+  'Holy Spider',
+  'Liberty Manta',
+  'Megalo Cruiser',
+  'Optical Wing',
+  'Rapid Barrel',
+  'Silver Sword',
+  'Sky Horse',
+  'Space Cancer',
+  'Speedy Dragon',
+  'Splash Whale',
+  'Valiant Jaguar',
+  'Wild Chariot'
+  ];
 
 var cockpitParts = [
-	'Aerial Bullet',
-	'Blast Camel',
-	'Bright Spear',
-	'Combat Cannon',
-	'Crystal Egg',
-	'Cyber Fox',
-	'Dark Chaser',
-	'Energy Crest',
-	'Garnet Phantom',
-	'Heat Snake',
-	'Moon Snail',
-	'Muscle Gorilla',
-	'Rave Drifter',
-	'Red Rex',
-	'Scud Viper',
-	'Sonic Soldier',
-	'Spark Bird',
-	'Super Lynx',
-	'Windy Shark',
-	'Wonder Worm',
-	];
+  'Aerial Bullet',
+  'Blast Camel',
+  'Bright Spear',
+  'Combat Cannon',
+  'Crystal Egg',
+  'Cyber Fox',
+  'Dark Chaser',
+  'Energy Crest',
+  'Garnet Phantom',
+  'Heat Snake',
+  'Moon Snail',
+  'Muscle Gorilla',
+  'Rave Drifter',
+  'Red Rex',
+  'Scud Viper',
+  'Sonic Soldier',
+  'Spark Bird',
+  'Super Lynx',
+  'Windy Shark',
+  'Wonder Worm'
+  ];
 
 var boosterParts = [
-	'Bazooka -YS',
-	'Bluster -X',
-	'Boxer -2C',
-	'Comet -V',
-	'Devilfish -RX',
-	'Euros -01',
-	'Extreme -ZZ',
-	'Impulse 220',
-	'Jupiter -Q',
-	'Meteor -RR',
-	'Punisher -4X',
-	'Raiden -88',
-	'Saturn -SG',
-	'Scorpion -R',
-	'Sunrise 140',
-	'Thunderbolt -V2',
-	'Tiger -RZ',
-	'Titan -G4',
-	'Triangle -GT',
-	'Triple -Z',
-	];
-
-//<------------------------------------------------------------------------------------->
+  'Bazooka -YS',
+  'Bluster -X',
+  'Boxer -2C',
+  'Comet -V',
+  'Devilfish -RX',
+  'Euros -01',
+  'Extreme -ZZ',
+  'Impulse 220',
+  'Jupiter -Q',
+  'Meteor -RR',
+  'Punisher -4X',
+  'Raiden -88',
+  'Saturn -SG',
+  'Scorpion -R',
+  'Sunrise 140',
+  'Thunderbolt -V2',
+  'Tiger -RZ',
+  'Titan -G4',
+  'Triangle -GT',
+  'Triple -Z'
+  ];
 
 var bodyPartsAll = [
-	'Aqua Goose',
-	'Big Tyrant',
-	'Brave Eagle',
-	'Dread Hammer',
-	'Fire Wolf',
-	'Funny Swallow',
-	'Giant Planet',
-	'Grand Base',
-	'Holy Spider',
-	'Liberty Manta',
-	'Megalo Cruiser',
-	'Optical Wing',
-	'Rapid Barrel',
-	'Silver Sword',
-	'Sky Horse',
-	'Space Cancer',
-	'Speedy Dragon',
-	'Splash Whale',
-	'Valiant Jaguar',
-	'Wild Chariot',
-	// AX parts
-	'Mad Bull',
-	//JP parts
-	'Blood Raven',
-	'Galaxy Falcon',
-	'Metal Shell',
-	'Rage Knight'
-	];
+  'Aqua Goose',
+  'Big Tyrant',
+  'Brave Eagle',
+  'Dread Hammer',
+  'Fire Wolf',
+  'Funny Swallow',
+  'Giant Planet',
+  'Grand Base',
+  'Holy Spider',
+  'Liberty Manta',
+  'Megalo Cruiser',
+  'Optical Wing',
+  'Rapid Barrel',
+  'Silver Sword',
+  'Sky Horse',
+  'Space Cancer',
+  'Speedy Dragon',
+  'Splash Whale',
+  'Valiant Jaguar',
+  'Wild Chariot',
+  // AX parts
+  'Mad Bull',
+  //JP parts
+  'Blood Raven',
+  'Galaxy Falcon',
+  'Metal Shell',
+  'Rage Knight'
+  ];
 
 var cockpitPartsAll = [
-	'Aerial Bullet',
-	'Blast Camel',
-	'Bright Spear',
-	'Combat Cannon',
-	'Crystal Egg',
-	'Cyber Fox',
-	'Dark Chaser',
-	'Energy Crest',
-	'Garnet Phantom',
-	'Heat Snake',
-	'Moon Snail',
-	'Muscle Gorilla',
-	'Rave Drifter',
-	'Red Rex',
-	'Scud Viper',
-	'Sonic Soldier',
-	'Spark Bird',
-	'Super Lynx',
-	'Windy Shark',
-	'Wonder Worm',
-	// AX parts
-	'Crazy Buffalo',
-	// JP parts
-	'Hyper Stream',
-	'Maximum Star',
-	'Round Disk',
-	'Rush Cyclone'
-	];
+  'Aerial Bullet',
+  'Blast Camel',
+  'Bright Spear',
+  'Combat Cannon',
+  'Crystal Egg',
+  'Cyber Fox',
+  'Dark Chaser',
+  'Energy Crest',
+  'Garnet Phantom',
+  'Heat Snake',
+  'Moon Snail',
+  'Muscle Gorilla',
+  'Rave Drifter',
+  'Red Rex',
+  'Scud Viper',
+  'Sonic Soldier',
+  'Spark Bird',
+  'Super Lynx',
+  'Windy Shark',
+  'Wonder Worm',
+  // AX parts
+  'Crazy Buffalo',
+  // JP parts
+  'Hyper Stream',
+  'Maximum Star',
+  'Round Disk',
+  'Rush Cyclone'
+  ];
 
 var boosterPartsAll = [
-	'Bazooka -YS',
-	'Bluster -X',
-	'Boxer -2C',
-	'Comet -V',
-	'Devilfish -RX',
-	'Euros -01',
-	'Extreme -ZZ',
-	'Impulse 220',
-	'Jupiter -Q',
-	'Meteor -RR',
-	'Punisher -4X',
-	'Raiden -88',
-	'Saturn -SG',
-	'Scorpion -R',
-	'Sunrise 140',
-	'Thunderbolt -V2',
-	'Tiger -RZ',
-	'Titan -G4',
-	'Triangle -GT',
-	'Triple -Z',
-	// AX parts
-	'Mars -EX',
-	// JP parts
-	'Crown -77',
-	'Hornet -FX',
-	'Shuttle -M2',
-	'Velocity -J'
-	];
+  'Bazooka -YS',
+  'Bluster -X',
+  'Boxer -2C',
+  'Comet -V',
+  'Devilfish -RX',
+  'Euros -01',
+  'Extreme -ZZ',
+  'Impulse 220',
+  'Jupiter -Q',
+  'Meteor -RR',
+  'Punisher -4X',
+  'Raiden -88',
+  'Saturn -SG',
+  'Scorpion -R',
+  'Sunrise 140',
+  'Thunderbolt -V2',
+  'Tiger -RZ',
+  'Titan -G4',
+  'Triangle -GT',
+  'Triple -Z',
+  // AX parts
+  'Mars -EX',
+  // JP parts
+  'Crown -77',
+  'Hornet -FX',
+  'Shuttle -M2',
+  'Velocity -J'
+  ];
 
-//<------------------------------------------------------------------------------------->
+//<-------------------------------------------------------------------------------------->
 
 var bodyPart1    = Math.floor(Math.random() * bodyParts.length);
 var bodyPart2    = Math.floor(Math.random() * bodyParts.length);
 var bodyPart3    = Math.floor(Math.random() * bodyParts.length);
-
 
 var cockpitPart1 = Math.floor(Math.random() * cockpitParts.length);
 var cockpitPart2 = Math.floor(Math.random() * cockpitParts.length);
@@ -220,152 +220,131 @@ var boosterPart1 = Math.floor(Math.random() * boosterParts.length);
 var boosterPart2 = Math.floor(Math.random() * boosterParts.length);
 var boosterPart3 = Math.floor(Math.random() * boosterParts.length);
 
-//<------------------------------------------------------------------------------------->
 
 function GenerateParts111(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyParts[bodyPart1]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitParts[cockpitPart1]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterParts[boosterPart1]
-)}
+  bodies   = [bodyParts[bodyPart1]];
+  cockpits = [cockpitParts[cockpitPart1]];
+  boosters = [boosterParts[boosterPart1]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GenerateParts211(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyParts[bodyPart1]
-	+ "<br>" +
-	bodyParts[bodyPart2]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitParts[cockpitPart1]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterParts[boosterPart1]
-)}
+  bodies   = [bodyParts[bodyPart1], bodyParts[bodyPart2]];
+  cockpits = [cockpitParts[cockpitPart1]];
+  boosters = [boosterParts[boosterPart1]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GenerateParts212(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyParts[bodyPart1]
-	+ "<br>" +
-	bodyParts[bodyPart2]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitParts[cockpitPart1]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterParts[boosterPart1] 
-	+ "<br>" +
-	boosterParts[boosterPart2]
-)}
+  bodies   = [bodyParts[bodyPart1], bodyParts[bodyPart2]];
+  cockpits = [cockpitParts[cockpitPart1]];
+  boosters = [boosterParts[boosterPart1], boosterParts[boosterPart2]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GenerateParts222(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyParts[bodyPart1]
-	+ "<br>" +
-	bodyParts[bodyPart2]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitParts[cockpitPart1]
-	+ "<br>" +
-	cockpitParts[cockpitPart2]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterParts[boosterPart1] 
-	+ "<br>" +
-	boosterParts[boosterPart2]
-)}
+  bodies   = [bodyParts[bodyPart1], bodyParts[bodyPart2]];
+  cockpits = [cockpitParts[cockpitPart1], cockpitParts[cockpitPart2]];
+  boosters = [boosterParts[boosterPart1], boosterParts[boosterPart2]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GenerateParts322(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyParts[bodyPart1]
-	+ "<br>" +
-	bodyParts[bodyPart2]
-	+ "<br>" +
-	bodyParts[bodyPart3]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitParts[cockpitPart1]
-	+ "<br>" +
-	cockpitParts[cockpitPart2]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterParts[boosterPart1] 
-	+ "<br>" +
-	boosterParts[boosterPart2]
-)}
+  bodies   = [bodyParts[bodyPart1], bodyParts[bodyPart2], bodyParts[bodyPart3]];
+  cockpits = [cockpitParts[cockpitPart1], cockpitParts[cockpitPart2]];
+  boosters = [boosterParts[boosterPart1], boosterParts[boosterPart2]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
-//<------------------------------------------------------------------------------------->
+//<-------------------------------------------------------------------------------------->
+
+var bodyPartAll1    = Math.floor(Math.random() * bodyPartsAll.length);
+var bodyPartAll2    = Math.floor(Math.random() * bodyPartsAll.length);
+var bodyPartAll3    = Math.floor(Math.random() * bodyPartsAll.length);
+
+var cockpitPartAll1 = Math.floor(Math.random() * cockpitPartsAll.length);
+var cockpitPartAll2 = Math.floor(Math.random() * cockpitPartsAll.length);
+var cockpitPartAll3 = Math.floor(Math.random() * cockpitPartsAll.length);
+
+
+var boosterPartAll1 = Math.floor(Math.random() * boosterPartsAll.length);
+var boosterPartAll2 = Math.floor(Math.random() * boosterPartsAll.length);
+var boosterPartAll3 = Math.floor(Math.random() * boosterPartsAll.length);
+
 
 function GeneratePartsAll111(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyPartsAll[bodyPart1]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitPartsAll[cockpitPart1]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterPartsAll[boosterPart1]
-)}
+  bodies   = [bodyPartsAll[bodyPartAll1]];
+  cockpits = [cockpitPartsAll[cockpitPartAll1]];
+  boosters = [boosterPartsAll[boosterPartAll1]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GeneratePartsAll211(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyPartsAll[bodyPart1]
-	+ "<br>" +
-	bodyPartsAll[bodyPart2]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitPartsAll[cockpitPart1]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterPartsAll[boosterPart1]
-)}
+  bodies   = [bodyPartsAll[bodyPartAll1], bodyPartsAll[bodyPartAll2]];
+  cockpits = [cockpitPartsAll[cockpitPartAll1]];
+  boosters = [boosterPartsAll[boosterPartAll1]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GeneratePartsAll212(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyPartsAll[bodyPart1]
-	+ "<br>" +
-	bodyPartsAll[bodyPart2]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitPartsAll[cockpitPart1]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterPartsAll[boosterPart1] 
-	+ "<br>" +
-	boosterPartsAll[boosterPart2]
-)}
+  bodies   = [bodyPartsAll[bodyPartAll1], bodyPartsAll[bodyPartAll2]];
+  cockpits = [cockpitPartsAll[cockpitPartAll1]];
+  boosters = [boosterPartsAll[boosterPartAll1], boosterPartsAll[boosterPartAll2]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GeneratePartsAll222(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyPartsAll[bodyPart1]
-	+ "<br>" +
-	bodyPartsAll[bodyPart2]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitPartsAll[cockpitPart1]
-	+ "<br>" +
-	cockpitPartsAll[cockpitPart2]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterPartsAll[boosterPart1] 
-	+ "<br>" +
-	boosterPartsAll[boosterPart2]
-)}
+  bodies   = [bodyPartsAll[bodyPartAll1], bodyPartsAll[bodyPartAll2]];
+  cockpits = [cockpitPartsAll[cockpitPartAll1], cockpitPartsAll[cockpitPartAll2]];
+  boosters = [boosterPartsAll[boosterPartAll1], boosterPartsAll[boosterPartAll2]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
 
 function GeneratePartsAll322(){
-document.write(
-	"<b>Body:</b><br>" +
-	bodyPartsAll[bodyPart1]
-	+ "<br>" +
-	bodyPartsAll[bodyPart2]
-	+ "<br>" +
-	bodyPartsAll[bodyPart3]
-	+ "<br><br><b>Cockpit:</b><br>" +
-	cockpitPartsAll[cockpitPart1]
-	+ "<br>" +
-	cockpitPartsAll[cockpitPart2]
-	+ "<br><br><b>Booster:</b><br>" +
-	boosterPartsAll[boosterPart1] 
-	+ "<br>" +
-	boosterPartsAll[boosterPart2]
-)}
+  bodies   = [bodyPartsAll[bodyPartAll1], bodyPartsAll[bodyPartAll2], bodyPartsAll[bodyPartAll3]];
+  cockpits = [cockpitPartsAll[cockpitPartAll1], cockpitPartsAll[cockpitPartAll2]];
+  boosters = [boosterPartsAll[boosterPartAll1], boosterPartsAll[boosterPartAll2]];
+  
+  renderParts(bodies, cockpits, boosters);
+}
+
+
+function renderParts(bodies, cockpits, boosters) {
+  var result = "<b>Body:</b><br>";
+  
+  for (var body in bodies) {
+    result += bodies[body] + "<br>";
+  }
+  
+  result += "<br><br><b>Cockpit:</b><br>";
+  
+  for (var cockpit in cockpits) {
+    result += cockpits[cockpit] + "<br>";
+  }
+  
+  result += "<br><br><b>Booster:</b><br>";
+  
+  for (var booster in boosters) {
+    result += boosters[booster] + "<br>";
+  }
+  
+  getResultDiv().innerHTML = result;
+}
+
+function getResultDiv() {
+  return document.getElementById('generated-ship');
+}
 
 </script><!----------------------------------------------------------------------------->
 
 </body>
 </html>
-Status API Training Shop Blog About © 2014 GitHub, Inc. Terms Privacy Security Contact 
