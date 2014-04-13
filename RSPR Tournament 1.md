@@ -23,9 +23,15 @@ There's is no set date yet. We will figure out the scheduling once we have enoug
 ### What Custom Parts do I need?
 For this tournament, you will need all 60 Standard Parts. You are permitted to use a Cheat Device or Program to unlock the parts. Obviously, you are not permitted to have any cheat active during the tournament.
 
+### How are parts assigned?
+I will generated the parts for each participant using this [script](http://starknebula.github.io/F-Zero-GX-RSPR-Generator/ "F-Zero GX RSPR Generator 0.3.1").
 
 
 ## Tournament Setup
+### Participants
+This tournament will consists of 16 players. First-come-first-served; we only have a limited number of positions, but feel free to add your name if someone drops out.
+
+### Rules of Play
 This will be a Double-Elimination Tournament, using the following rules:
 * Regular Parts
 * Unique Machines
