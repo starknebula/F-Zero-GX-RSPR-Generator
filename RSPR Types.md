@@ -47,10 +47,10 @@ Double-Elimination Tournaments will require minimum 4 participants, with no maxi
 
 ------
 
-### Cups
+### Cup Rounds
 Each round consists of a single cup, wherein the player whom completes it the fastest is the winner. The winner is determined by the fastest Single Segment Time.
 
-### Tracks
+### Track Rounds
 Each round consists of one or multiple tracks, wherein the player whom completes them the fastest is the winner. Multiple track rounds are a best-of set. The winner is determined by the Results Screen time.
 
 ------
