@@ -20,8 +20,8 @@ Don't worry, the scheduling will take place over the course of about 2 weeks, wi
 ### **Specifically**, when is the tournament?
 There's is no set date yet. We will figure out the scheduling once we have enough participants.
 
-### What Custom Parts do I need?
-For this tournament, you will need all 60 Standard Parts. You are permitted to use a Cheat Device or Program to unlock the parts. Obviously, you are not permitted to have any cheat active during the tournament. Likewise, you will need to have Diamond Cup unlocked.
+### What do I need?
+For this tournament, you will need all 60 Standard Parts. Likewise, you will need to have Diamond Cup unlocked. You are permitted to use a Cheat Device or Program to unlock the parts and cups. Obviously, you are not permitted to have any cheat active during the tournament. 
 
 ### How are parts assigned?
 I will generated the parts for each participant using this [script](http://starknebula.github.io/F-Zero-GX-RSPR-Generator/ "F-Zero GX RSPR Generator 0.3.1").
