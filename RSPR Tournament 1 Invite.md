@@ -3,7 +3,7 @@
 ### What is an RSPR?
 A Randomly Selected (Custom) Parts Race (RSPR): a type of sub-game for F-Zero GX. The idea comes from the "Sealed Pack Play" chalenge, a card game tournament where you're given a set number of new booster packs from which to build a deck and compete with. Likewise, we randomly select parts for each participant. The players must use their knowledge and preference of the parts to build a machine to compete with.
 
-This is a _**For Fun**_ F-Zero GX tournament. It's a fresh take on a game that has since become only about optimization. Contrary to that philosophy, it is spontaneous and unpredictable for the purpose of _**fun**_. Since each player is assigned random machines, one must learn to pick up a new, unique custom machine and try to find how to use it best.
+This is a _**For Fun**_ F-Zero GX tournament. It's a fresh take on a game that has since become only about optimization. Contrary to that philosophy, it is spontaneous and unpredictable for the purpose of _**fun**_. Since each player is assigned random parts, one must learn to pick up a new, unique custom machine and try to find how to use it best.
 
 ### How do I join?
 Drop in the F-Zero Central IRC ([irc2.speedrunslive.com #f-zero](http://irc.lc/irc2.speedrunslive.com/f-zero/YourNickname "Mibbit Online IRC")) using your favoured IRC Client  and ask either StarkNebula or Yazzo to join. Alternativley, you may tweet me [@StarkNebula](https://twitter.com/StarkNebula "twitter.com/StarkNebula") on Twitter. You will need to proved your SRL nickname* and [your time zone in GMT format](http://wwp.greenwichmeantime.com/ "greenwichmeantime.com").
