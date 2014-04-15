@@ -1,7 +1,7 @@
 # RSPR Tournament 1
 
 ### What is an RSPR?
-A Randomly Selected (Custom) Parts Race (RSPR); a type of sub-game for F-Zero GX. The idea comes from the "Sealed Pack Play" chalenge, a card game tournament where you're given a set number of new booster packs from which to build a deck and compete with. Likewise, we randomly select parts for each participant. The players must use their knowledge and preference of the parts to build a machine to compete with.
+A Randomly Selected (Custom) Parts Race (RSPR): a type of sub-game for F-Zero GX. The idea comes from the "Sealed Pack Play" chalenge, a card game tournament where you're given a set number of new booster packs from which to build a deck and compete with. Likewise, we randomly select parts for each participant. The players must use their knowledge and preference of the parts to build a machine to compete with.
 
 This is a _**For Fun**_ F-Zero GX tournament. It's a fresh take on a game that has since become only about optimization. Contrary to that philosophy, it is spontaneous and unpredictable for the purpose of _**fun**_. Since each player is assigned random machines, one must learn to pick up a new, unique custom machine and try to find how to use it best.
 
@@ -19,7 +19,7 @@ Don't worry, the tournament will take place over the course of about 2 weeks, wi
 There's is no set date yet. We will figure out the scheduling once we have enough participants. (16 participants.)
 
 ### Do I need to stream to participate?
-Yes. Though you do not need an extraordinary connection. A 320x240 resolution is just fine. We simply need to verify that you are indeed using your designated custom machine. You do not need a mic, nor even audio. Your stream will likely be restreamed via the [F-Zero Central twitch channel](http://www.twitch.tv/team/fzc "twitch.tv/team/fzc").
+Yes. Though you do not need an extraordinary connection. A 320x240 resolution is just fine. We simply need to verify that you are indeed using your designated custom machine. You do not need a mic, nor even audio. Your stream will likely be restreamed via the [F-Zero Central twitch channel](http://www.twitch.tv/team/fzc "twitch.tv/team/fzc"). *_Ironing out details._
 
 ### How are parts assigned?
 I will generated the parts for each participant using this [script](http://starknebula.github.io/F-Zero-GX-RSPR-Generator/ "F-Zero GX RSPR Generator 0.3.1").
