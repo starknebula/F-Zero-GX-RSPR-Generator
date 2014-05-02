@@ -13,7 +13,7 @@ Simply fill out this [Google Form](https://docs.google.com/forms/d/1t2a-2LKlio9j
 We will then reserve spot in the tournament seeding, or backlog you into the reserved seating should someone drop out. Once the seeding is complete, brackets will be assigned. We will contact you to confirm your seed. You must reply within 36 hours to reserve that seed. If not, you will forfeit your spot to the next reserve participant.
 
 ### I don't know if I can find the time for this...
-Don't worry, the tournament will take place over the course of about 2 weeks, with matches taking place at the participants' convienience. We will try our best, but we cannot guarantee you perfect hours.
+Don't worry, the tournament will take place over the course of multiple days, with matches taking place at the participants' convienience. We will try our best, but we cannot guarantee you perfect hours.
 
 ### **Specifically**, when is the tournament?
 There's is no set date yet. We will figure out the scheduling once we have enough participants. (Minimum 8 participants.)
